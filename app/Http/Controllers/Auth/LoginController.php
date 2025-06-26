@@ -43,7 +43,7 @@ class LoginController extends Controller
         $this->guard()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/home');
+        return redirect('/login');
     }
 
     public function username()

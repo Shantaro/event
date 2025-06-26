@@ -9,7 +9,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="{{route('eventList')}}">
         <i class="ti-align-justify menu-icon"></i>
         <span class="menu-title">Event List</span>
       </a>
@@ -21,6 +21,15 @@
       <a class="nav-link" href="{{route('userList')}}">
         <i class="ti-user menu-icon"></i>
         <span class="menu-title">User List</span>
+      </a>
+    </li>
+    @endif
+
+    @if(auth()->user()->role === 'member')
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('registrationList')}}">
+        <i class="ti-bookmark menu-icon"></i>
+        <span class="menu-title">Order List</span>
       </a>
     </li>
     @endif

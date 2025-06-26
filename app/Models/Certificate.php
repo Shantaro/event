@@ -19,6 +19,6 @@ class Certificate extends Model
 
     public function registration()
     {
-        return $this->belongsTo(Registration::class, 'certificate_id', 'id');
+        return $this->belongsTo(Registration::class, 'registration_id', 'id');
     }
 }

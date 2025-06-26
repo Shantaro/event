@@ -22,21 +22,21 @@ class Registration extends Model
 
     public function presence()
     {
-        return $this->hasMany(Presence::class, 'registration_id', 'id');
+        return $this->hasOne(Presence::class, 'registration_id', 'id');
     }
 
     public function certificate()
     {
-        return $this->belongsTo(Certificate::class, 'certificate_id', 'id');
+        return $this->hasOne(Certificate::class, 'registration_id', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function event()
     {
-        return $this->belongsTo(Event::class, 'event_id');
+        return $this->belongsTo(Event::class, 'event_id', 'id');
     }
 }
